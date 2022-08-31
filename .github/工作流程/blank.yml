@@ -1,0 +1,34 @@
+名称：早上
+上：
+  时间表：
+  - cron：   ' 0 0 * * * '
+  工作流调度：
+
+工作：
+  发送消息：
+    运行：ubuntu-latest
+    名称：送早上给你的女朋友
+
+    步骤：
+    -名称：结帐
+      用途：actions/checkout@v3
+      与：
+        参考：大师
+
+    -姓名：发件人
+      使用：操作/设置-python@v2
+      与：
+        蟒蛇版本：' 3.x '
+        架构：' x64 '
+    -运行：pip install -r ./requirements.txt && python ./main.py
+
+    环境：
+      APP_ID : ${{ 秘密.APP_ID }}
+      APP_SECRET : ${{ 秘密.APP_SECRET }}
+      TEMPLATE_ID : ${{ secrets.TEMPLATE_ID }}
+      USER_ID : ${{ secrets.USER_ID }}
+      START_DATE : ${{ 秘密.START_DATE }}
+      生日：${{秘密.生日}}
+      城市：${{ 秘密.CITY }}
+页脚
+
